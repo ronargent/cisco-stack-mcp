@@ -1,0 +1,42 @@
+------------------------------------------------
+Local Intf: Gi1/0/1
+Chassis id: 0050.5687.0001
+Port id: 0050.5687.1a2b
+Port Description: vmnic0
+System Name: esx01.tes.local
+
+System Description: 
+VMware ESX Releasebuild-24280767
+
+Time remaining: 102 seconds
+System Capabilities: B
+Enabled Capabilities: B
+Management Addresses:
+    IP: 10.223.10.21
+Auto Negotiation - not supported
+Physical media capabilities - not advertised
+Media Attachment Unit type - not advertised
+Vlan ID: - not advertised
+
+------------------------------------------------
+Local Intf: Gi1/0/2
+Chassis id: 0050.5687.0002
+Port id: 0050.5687.3c4d
+Port Description: vmnic0
+System Name: esx02.tes.local
+
+System Description: 
+VMware ESX Releasebuild-24280767
+
+Time remaining: 98 seconds
+System Capabilities: B
+Enabled Capabilities: B
+Management Addresses:
+    IP: 10.223.10.22
+Auto Negotiation - not supported
+Physical media capabilities - not advertised
+Media Attachment Unit type - not advertised
+Vlan ID: - not advertised
+
+
+Total entries displayed: 2

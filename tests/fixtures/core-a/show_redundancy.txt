@@ -1,0 +1,38 @@
+Redundant System Information :
+------------------------------
+       Available system uptime = 18 weeks, 3 days, 4 hours, 12 minutes
+Switchovers system experienced = 0
+              Standby failures = 0
+        Last switchover reason = none
+
+                 Hardware Mode = Duplex
+    Configured Redundancy Mode = sso
+     Operating Redundancy Mode = sso
+              Maintenance Mode = Disabled
+                Communications = Up
+
+Current Processor Information :
+-------------------------------
+               Active Location = slot 1
+        Current Software state = ACTIVE
+       Uptime in current state = 18 weeks, 3 days, 4 hours, 12 minutes
+                 Image Version = Cisco IOS Software [IOSXE], Catalyst L3 Switch Software (CAT9K_IOSXE), Version 17.15.5, RELEASE SOFTWARE (fc3)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2026 by Cisco Systems, Inc.
+Compiled Thu 05-Mar-26 10:12 by mcpre
+                          BOOT = flash:packages.conf;
+                   CONFIG_FILE = 
+        Configuration register = 0x102
+
+Peer Processor Information :
+----------------------------
+              Standby Location = slot 2
+        Current Software state = STANDBY HOT 
+       Uptime in current state = 18 weeks, 3 days, 4 hours, 2 minutes
+                 Image Version = Cisco IOS Software [IOSXE], Catalyst L3 Switch Software (CAT9K_IOSXE), Version 17.15.5, RELEASE SOFTWARE (fc3)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2026 by Cisco Systems, Inc.
+Compiled Thu 05-Mar-26 10:12 by mcpre
+                          BOOT = flash:packages.conf;
+                   CONFIG_FILE = 
+        Configuration register = 0x102

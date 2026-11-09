@@ -1,0 +1,44 @@
+-------------------------
+Device ID: core-b.tes.local
+Entry address(es): 
+  IP address: 10.223.99.12
+Platform: cisco C9300-24T,  Capabilities: Router Switch IGMP 
+Interface: TenGigabitEthernet1/1/1,  Port ID (outgoing port): TenGigabitEthernet1/1/1
+Holdtime : 151 sec
+
+Version :
+Cisco IOS Software [IOSXE], Catalyst L3 Switch Software (CAT9K_IOSXE), Version 17.15.5, RELEASE SOFTWARE (fc3)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2026 by Cisco Systems, Inc.
+Compiled Thu 05-Mar-26 10:12 by mcpre
+
+advertisement version: 2
+VTP Management Domain: ''
+Native VLAN: 99
+Duplex: full
+Management address(es): 
+  IP address: 10.223.99.12
+
+-------------------------
+Device ID: core-b.tes.local
+Entry address(es): 
+  IP address: 10.223.99.12
+Platform: cisco C9300-24T,  Capabilities: Router Switch IGMP 
+Interface: TenGigabitEthernet2/1/1,  Port ID (outgoing port): TenGigabitEthernet2/1/1
+Holdtime : 149 sec
+
+Version :
+Cisco IOS Software [IOSXE], Catalyst L3 Switch Software (CAT9K_IOSXE), Version 17.15.5, RELEASE SOFTWARE (fc3)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2026 by Cisco Systems, Inc.
+Compiled Thu 05-Mar-26 10:12 by mcpre
+
+advertisement version: 2
+VTP Management Domain: ''
+Native VLAN: 99
+Duplex: full
+Management address(es): 
+  IP address: 10.223.99.12
+
+
+Total cdp entries displayed : 2

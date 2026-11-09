@@ -1,0 +1,62 @@
+! =============================================================================
+! cisco-stack-mcp: switch-side preparation (apply on EACH stack's active switch)
+! =============================================================================
+! Read-only is enforced here: user mcp-ro can only run commands in parser view
+! MCP-RO, which contains show commands and the two terminal settings Netmiko
+! needs. Keep a console session open while applying in case AAA changes lock
+! out logins. Replace every <...> before pasting.
+!
+! If TACACS+/ISE already handles device admin, do NOT add the local AAA lines;
+! create the account there instead (authorise "show *", "terminal length 0",
+! "terminal width 511"; deny everything else) and skip the parser view.
+! -----------------------------------------------------------------------------
+
+! --- 1. Prerequisites (skip any line already in the running config) -----------
+aaa new-model
+aaa authentication login default local
+aaa authorization exec default local
+! An enable secret must exist before parser views can be created:
+! enable secret <existing-or-new-enable-secret>
+!
+! Enter root view to create views (prompts for the enable secret):
+!   enable view
+
+! --- 2. The show-only view ------------------------------------------------------
+parser view MCP-RO
+ secret <view-secret>
+ commands exec include all show
+ commands exec include terminal length
+ commands exec include terminal width
+exit
+
+! --- 3. The service account (long random password, stored only in the
+!        server's /etc/cisco-stack-mcp/secrets.env) -------------------------------
+username mcp-ro view MCP-RO secret <long-random-password>
+
+! --- 4. SSH only, from the MCP host and the admin network ----------------------
+ip ssh version 2
+ip access-list standard MGMT-SSH
+ permit host <mcp-server-ip>
+ permit <admin-subnet> <wildcard>
+! ^ the admin-subnet line matters: an access-class with only the MCP host
+!   would lock engineers out.
+line vty 0 15
+ access-class MGMT-SSH in
+ transport input ssh
+end
+! write memory   <- once verified
+
+! =============================================================================
+! Verification (log in as mcp-ro from the MCP host)
+! =============================================================================
+!  1. show parser view           -> Current view is 'MCP-RO'
+!  2. configure terminal         -> rejected
+!     clear counters             -> rejected
+!     reload                     -> rejected
+!  3. show switch                -> works
+!     show interfaces status     -> works
+!     show environment all       -> works
+!  4. SSH from a host not in MGMT-SSH -> refused
+!
+! Then on the MCP server:  sudo /opt/cisco-stack-mcp/app/scripts/refresh-host-keys.sh
+! =============================================================================

@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cisco-stack-mcp"
+version = "1.0.0"
+description = "Read-only MCP server for Cisco Catalyst 9300 stacks (IOS XE) over SSH"
+requires-python = ">=3.11"
+dependencies = [
+  "mcp>=1.20,<2",          # FastMCP API, same as the Zabbix MCP build
+  "netmiko>=4.4,<5",
+  "ntc-templates>=7",
+  "pyyaml>=6",
+  "uvicorn>=0.30",
+]
+
+[project.optional-dependencies]
+genie = ["genie.libs.parser"]   # optional extra parser fallback
+
+[project.scripts]
+cisco-stack-mcp = "cisco_stack_mcp.server:main"
+cisco-stack-mcp-token = "cisco_stack_mcp.token_cli:main"
+
+[tool.setuptools]
+packages = ["cisco_stack_mcp"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

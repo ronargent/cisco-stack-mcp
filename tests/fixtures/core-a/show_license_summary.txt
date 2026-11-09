@@ -1,0 +1,9 @@
+Account Information:
+  Smart Account: <none>
+  Virtual Account: <none>
+
+License Usage:
+  License                 Entitlement Tag               Count Status
+  -----------------------------------------------------------------------------
+  network-advantage       (C9300-24 Network Advan...)       2 IN USE
+  dna-advantage           (C9300-24 DNA Advantage)          2 IN USE

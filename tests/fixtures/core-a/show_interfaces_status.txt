@@ -1,0 +1,17 @@
+
+Port         Name               Status       Vlan       Duplex  Speed Type 
+Gi1/0/1      SRV-ESX01 vmnic0   connected    trunk        a-full a-1000 10/100/1000BaseTX
+Gi1/0/2      SRV-ESX02 vmnic0   connected    trunk        a-full a-1000 10/100/1000BaseTX
+Gi1/0/3      HMC-A mgmt         connected    20           a-full a-1000 10/100/1000BaseTX
+Gi1/0/4                         notconnect   1              auto   auto 10/100/1000BaseTX
+Gi1/0/5      Printer-2F         err-disabled 30             auto   auto 10/100/1000BaseTX
+Gi1/0/6                         disabled     1              auto   auto 10/100/1000BaseTX
+Te1/1/1      Uplink core-b      connected    trunk          full    10G SFP-10GBase-SR
+Te1/1/2                         notconnect   1              full    10G unknown
+Gi2/0/1      SRV-ESX01 vmnic1   connected    trunk        a-full a-1000 10/100/1000BaseTX
+Gi2/0/2      SRV-ESX02 vmnic1   connected    trunk        a-full a-1000 10/100/1000BaseTX
+Gi2/0/3      HMC-B mgmt         connected    20           a-full a-1000 10/100/1000BaseTX
+Gi2/0/4                         notconnect   1              auto   auto 10/100/1000BaseTX
+Te2/1/1      Uplink core-b      connected    trunk          full    10G SFP-10GBase-SR
+Te2/1/2                         notconnect   1              full    10G unknown
+Po10         Uplink core-b      connected    trunk        a-full  a-10G N/A

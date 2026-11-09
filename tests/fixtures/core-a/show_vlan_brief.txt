@@ -1,0 +1,13 @@
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Gi1/0/4, Gi1/0/6, Te1/1/2
+                                                Gi2/0/4, Te2/1/2
+10   SERVERS                          active    
+20   HMC-MGMT                         active    Gi1/0/3, Gi2/0/3
+30   PRINTERS                         active    Gi1/0/5
+99   MGMT                             active    
+1002 fddi-default                     act/unsup 
+1003 token-ring-default               act/unsup 
+1004 fddinet-default                  act/unsup 
+1005 trnet-default                    act/unsup 

@@ -1,0 +1,41 @@
+[Unit]
+Description=cisco-stack-mcp (read-only MCP server for Cisco C9300 stacks)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=cisco-mcp
+Group=cisco-mcp
+EnvironmentFile=/etc/cisco-stack-mcp/server.env
+EnvironmentFile=/etc/cisco-stack-mcp/secrets.env
+ExecStart=/opt/cisco-stack-mcp/venv/bin/cisco-stack-mcp
+Restart=on-failure
+RestartSec=5
+
+# Hardening
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectKernelLogs=yes
+ProtectControlGroups=yes
+ProtectClock=yes
+ProtectHostname=yes
+RestrictNamespaces=yes
+RestrictRealtime=yes
+RestrictSUIDSGID=yes
+LockPersonality=yes
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+CapabilityBoundingSet=
+AmbientCapabilities=
+SystemCallArchitectures=native
+SystemCallFilter=@system-service
+ReadWritePaths=/var/log/cisco-stack-mcp
+UMask=0027
+
+[Install]
+WantedBy=multi-user.target

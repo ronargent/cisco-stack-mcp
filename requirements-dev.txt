@@ -1,0 +1,3 @@
+-r requirements.lock
+pytest>=8
+asyncssh>=2.14

@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+tests/.mock_host_key
+*.tar.gz
+# never commit live config or secrets
+secrets.env
+tokens.json
+known_hosts
+*.key

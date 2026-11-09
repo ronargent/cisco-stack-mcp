@@ -1,0 +1,7 @@
+Switch/Stack Mac Address : 6c13.d5aa.1200 - Local Mac Address
+Mac persistency wait time: Indefinite
+                                             H/W   Current
+Switch#   Role    Mac Address     Priority Version  State 
+-------------------------------------------------------------------------------------
+*1       Active   6c13.d5aa.1200     15     V02     Ready                
+ 2       Standby  6c13.d5aa.4400     14     V02     Ready                

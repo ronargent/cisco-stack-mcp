@@ -1,0 +1,15 @@
+# Cisco C9300 stacks this server may query. One entry per stack (the stack's management IP).
+# name: lowercase, digits, - or _ (used as the `stack` argument by clients)
+# expected_members: how many switches should be Ready; fewer is reported as an issue.
+stacks:
+  - name: core-a
+    host: 10.223.99.11        # CHANGE ME: stack A management IP
+    site: DC1
+    expected_members: 2
+    description: Stack A (C9300-24T x2)
+  - name: core-b
+    host: 10.223.99.12        # CHANGE ME: stack B management IP
+    site: DC1
+    expected_members: 2
+    description: Stack B (C9300-24T x2)
+# Optional per stack:  port: 22
