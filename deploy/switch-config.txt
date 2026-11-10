@@ -46,8 +46,12 @@ ip access-list standard MGMT-SSH
 ! ^ the admin-subnet line matters: an access-class with only the MCP host
 !   would lock engineers out.
 line vty 0 15
- access-class MGMT-SSH in
+ access-class MGMT-SSH in vrf-also
  transport input ssh
+! ^ 'vrf-also' is required when management is on the Gi0/0 port (Mgmt-vrf):
+!   without it the access-class denies every SSH session arriving in a VRF.
+!   With Mgmt-vrf the switch also needs a route back to the MCP host, e.g.
+!   ip route vrf Mgmt-vrf 0.0.0.0 0.0.0.0 <mgmt-gateway>
 end
 ! write memory   <- once verified
 
