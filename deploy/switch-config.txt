@@ -34,6 +34,11 @@ exit
 username mcp-ro view MCP-RO secret <long-random-password>
 
 ! --- 4. SSH only, from the MCP host and the admin network ----------------------
+! SSH needs an RSA key pair. Check first with 'show ip ssh': if it says
+! "SSH Disabled", generate the keys (skip if SSH already works for engineers):
+ip domain name <your-domain>
+crypto key generate rsa modulus 3072 label SSH-KEYS
+ip ssh rsa keypair-name SSH-KEYS
 ip ssh version 2
 ip access-list standard MGMT-SSH
  permit host <mcp-server-ip>
@@ -57,6 +62,7 @@ end
 !     show interfaces status     -> works
 !     show environment all       -> works
 !  4. SSH from a host not in MGMT-SSH -> refused
+!  5. From the MCP server:  nc -zvw3 <switch-mgmt-ip> 22   -> succeeded
 !
 ! Then on the MCP server:  sudo /opt/cisco-stack-mcp/app/scripts/refresh-host-keys.sh
 ! =============================================================================
